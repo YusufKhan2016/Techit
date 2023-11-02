@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load static %}
+{% static "images" as baseUrl %}
+
+{% block title %}About us{% endblock %}
+
+<!--header block -->
+
+{% block header %}
+<!-- slider starts -->
+</div>
+<div class="typing">
+<p class="type"></p>
+</div>
+
+
+<!--team section-->
+<section class=" about team">
+	<div class="center">
+		<h1>Our Team</h1>
+	</div>
+
+	<section class="swiper mySwiper team-body team">
+
+		<div class="swiper-wrapper">
+			{% for t in group%}
+		  <div class="card swiper-slide">
+			<div class="card__image">
+			  <img src="{{t.img.url}}" alt="card image">
+			</div>
+	
+			<div class="card__content">
+			  <h3 class="card__title">{{t.rank}}</h3>
+			  <span class="card__name">{{t.name}}</span>
+			  <div class="icons">	
+				{% for s in smp %}		
+					{% if s.team_member == t %}
+						<a href="{{s.link}}"><i class="ri-{{s.platform}}-fill"></i></a>
+					{% endif %}
+				{% endfor %}
+			</div>
+			</div>
+		  </div>
+		  {% endfor %}
+		</div>
+	  </section>
+</section>
+
+
+
+
+<!--team section ends-->
+
+<section class="section pricing">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-6">
+				<div class="heading text-center mb-50">
+				<h2 class="mb-4">Honors and awards</h2>
+				<p>Dicta cupiditate, incidunt quia obcaecati itaque cumque, nostrum ipsum est voluptatibus, porro
+					provident a quam quibusdam. Ducimus possimus, nesciunt minima magni aspernatur.</p>
+			</div>
+		</div>
+	</div>
+
+    <div class="row justify-content-center">
+		{% for dest in dests %}
+		<div class="col-lg-2 col-md-3 col-sm-4">
+		  <div class="award-img-block mb-4 mb-lg-0">
+			<div class="award-img">
+			  <img src="{{dest.img.url}}" alt="" class="img-fluid">
+			</div>
+		  </div>
+		</div>	
+		{% endfor %}		
+	  </div>
+  </div>
+</section>
+
+
+
+<section class="team section"> 
+
+<!--logo slider starts -->
+	<div class="heading text-center mb-50 team">
+		<h1 class="container" >WHO HIRED US </h1>
+	<div class="slider">
+		<div class="slide-track">
+			{% for imgslider in imgslider %}
+		<div  class="slide">
+			<img src="{{imgslider.img.url}}" height="{{imgslider.height}}" width="{{imgslider.width}}" alt="" height="100px" width="200"/>
+		</div>	
+		{% endfor %}	
+		{% for imgslider in imgslider %}
+		<div  class="slide">
+			<img src="{{imgslider.img.url}}" height="{{imgslider.height}}" width="{{imgslider.width}}" alt="" height="100px" width="200"/>
+		</div>	
+		{% endfor %}		
+		</div>
+	</div>
+</div>
+	
+</section>
+	<!--logo slider ends -->
+	
+
+<!--slider ends -->
+
+<!-- footer Start -->
+{% block footer %}
+
+
+
+  {% endblock %}
+  {% endblock %}
+

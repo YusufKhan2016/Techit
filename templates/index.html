@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+{% load static %}
+{% static "images" as baseUrl %}
+
+{% block title %}Tech IT - Experience the Magic {% endblock %}
+
+<!--header block -->
+{% block header %}
+
+<!-- Slider Start -->
+<section class="banner d-flex align-items-center">
+	<div class="banner-img-part"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 col-md-12 col-xl-8">
+				<div class="block">
+					<span class="text-uppercase text-sm letter-spacing ">The most powerful Solution</span>
+					<h1 class="mb-3 mt-3 ">Digital experience with Techit</h1>
+					<p class="mb-5  ">Veritatis earum aliquid doloribus molestias, eveniet molestiae aperiam ratione. Facilis velit voluptatibus impedit eligendi delectus illo earum voluptatum, laudantium molestiae!</p>
+
+					<a href="about.html" target="_blank" class="btn btn-main">Learn more about us<i class="fa fa-angle-right ml-2"></i></a>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="section about">
+	<div class="container" id="blur">
+		<div class="row">
+			<div class="col-lg-4 col-md-6">
+				<div class="about-item mb-5 mb-lg-5">
+					<div class="icon">
+						<i class="ti-panel"></i>
+					</div>
+					<div class="content">
+						<h4 class="mt-3 mb-3">Analyse Your Expensees On Every Device</h4>
+						<p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
+						<a href="#"> Read More </a>
+					</div>
+				</div>
+			</div>
+			
+
+			<div class="col-lg-4 col-md-6">
+				<div class="about-item mb-5 mb-lg-5">
+					<div class="icon">
+						<i class="ti-panel"></i>
+					</div>
+					<div class="content">
+						<h4 class="mt-3 mb-3">Analyse Your Expensees On Every Device</h4>
+						<p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
+						<a href="#"> Read More </a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-4 col-md-6">
+				<div class="about-item">
+					<div class="icon">
+						<i class="ti-headphone-alt"></i>
+					</div>
+					<div class="content">
+						<h4 class="mt-3 mb-3">Creating a dedicated IT business growth</h4>
+						<p class="mb-4 ">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
+						<a href="#"> Read More </a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="section about">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-5">
+				<div class="process-block pl-4">
+					<span class="text-uppercase text-sm letter-spacing">Why choose us</span>
+					<h2 class="mb-4 mt-3">We help you to make work easy</h2>
+
+					<p class="mb-4">We understand what your business means to you,your requirements considering trends.Smet nemo excepturi voluptas eligendi .</p>
+				</div>
+			</div>
+
+			<div class="col-lg-7 col-xs-12 col-md-12">
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<div class="icon-block text-center mb-4 mb-lg-0">
+							<i class="ti-light-bulb"></i>
+							<h5>Data analysis</h5>
+							<p >A complete web app solution for business</p>
+						</div>
+					</div>
+
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<div class="icon-block text-center mt-4 mb-4 mb-lg-0">
+							<i class="ti-panel"></i>
+							<h5>Web Development</h5>
+							<p>A complete web app solution for business</p>
+						</div>
+					</div>
+
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<div class="icon-block text-center">
+							<i class="ti-search"></i>
+							<h5>Content Mangement</h5>
+							<p>A complete web app solution for business</p>
+						</div>
+					</div>
+
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<div class="icon-block text-center mt-4">
+							<i class="ti-rocket"></i>
+							<h5>Mobility</h5>
+							<p>A complete web app solution for business</p>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+</section>
+
+<!--portfolio section -->
+<section class="section cta " >
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-5">
+				<div class="bg-white p-5 rounded">
+					<h3 class="mb-4">Assurance Service In Software<span class="text-color-primary"> Testing</span> </h3>
+					<p class="mb-30">An Independent Validation and Testing services from SISAR. Helps to reduce software development efforts</p>
+					
+					<a href="project.html" class="btn btn-main">Portfolio<i class="fa fa-angle-right ml-2"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section"> 
+</section >
+<!--portfolio section ends-->
+
+
+
+<!--logo slider starts -->
+<section >
+	<div class="heading text-center mb-50">
+		<h1 class="container" >WHO HIRED US </h1>
+	</div>
+</section>
+<section class="section body">
+	<div class="slider">
+		<div class="slide-track">
+			{% for imgslider in imgslider %}
+		<div  class="slide">
+			<img src="{{imgslider.img.url}}" height="{{imgslider.height}}" width="{{imgslider.width}}" alt="" height="100px" width="200"/>
+		</div>	
+		{% endfor %}
+		{% for imgslider in imgslider %}
+		<div  class="slide">
+			<img src="{{imgslider.img.url}}" height="{{imgslider.height}}" width="{{imgslider.width}}" alt="" height="100px" width="200"/>
+		</div>	
+		{% endfor %}			
+		</div>
+	</div>
+	
+</section>
+
+<!--logo slider ends -->
+<div class="container">
+<h1>FAQs</h1>
+
+<span>We get a lot of these questions</span> 
+
+<div class="wper">
+		{% for faqs in faqs %}
+      <div class="cner">
+        <div class="quest">
+          {{faqs.quest|safe}}
+        </div>
+        <div class="ac">
+          <div class="ans">
+            {{faqs.ans|safe}}<br><br>
+
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      </div>
+  
+</div>
+
+<!--slider ends -->
+
+
+<!-- footer Start -->
+{% block footer %}
+
+<!--Essential Scripts -->
+{% block Scripts %}
+
+
+{% endblock %}
+{% endblock %}
+{% endblock %}

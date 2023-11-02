@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+{% static "images" as baseUrl %}
+
+{% block title %}Tech IT - Experience the Magic {% endblock %}
+
+<!--header block -->
+{% block header %}
+
+<!--slider starts -->
+<section class="section about">
+    
+    <div class="container">
+        <h1 class="row justify-content-center align-items-center">{{servedetail.name}}</h1>
+    <section class="section about">
+        {{ servedetail.Desc|safe }}
+    </section>
+</div>
+</section>
+
+<section class="box">
+	<div class="container">
+		<div class="cta-block py-5">
+			<div class="row align-items-center ">
+				<div class="col-lg-8">
+					<span class="text-color">For Every type business</span>
+					<h2 class="mt-2 mb-4 mb-lg-0">Entrust your project to our best team of professionals</h2>
+				</div>
+				<div class="col-lg-4">
+					<a href="contact.html" class="btn btn-main btn-round-full float-lg-right">Contact Us</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+<!--slider ends -->
+<!-- footer Start -->
+{% block footer %}
+
+<!--Essential Scripts -->
+{% block Scripts %}
+
+
+{% endblock %}
+{% endblock %}
+{% endblock %}
+
+

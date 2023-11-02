@@ -1,0 +1,22 @@
+.typing {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(202, 146, 146);
+    color: rgb(44, 41, 41);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    font-weight: 600;
+}
+
+.typing{
+    font-size: 80px;
+    font-weight: 600;
+}
+
+/* Hide the entire heading initially */
+#typing-heading {
+    visibility: hidden;
+  }
+  

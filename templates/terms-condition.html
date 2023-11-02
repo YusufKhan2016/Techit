@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% static "images" as baseUrl %}
+
+{% block title %}Terms of use{% endblock %}
+
+<!--header block -->
+{% block header %}
+
+
+</div>
+<div class="typing">
+    <p class="type7">
+
+    </p>
+</div>
+
+<section class="section about">
+	<div class="container">
+		{{protocol.terms_condition | safe}}
+	</div>
+</section>
+
+
+{% block footer %}
+
+{% endblock %}
+
+
+{% block scripts %}
+{% endblock %}
+{% endblock %}

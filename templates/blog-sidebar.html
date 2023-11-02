@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% load static %}
+{% static "images" as baseUrl %}
+
+{% block title %}Orbitor{% endblock %}
+
+<!--header block -->
+{% block header %}
+
+<!-- Slider Start -->
+
+<!-- blog posts start -->
+</div>
+<div class="typing">
+	<span>Interested in<p class="type2"> </span> </p>
+</div>
+
+
+<section class="section blog-wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="row">
+	{% for b in queryset %}
+	<div class="col-lg-12 col-md-12 mb-5">
+		<div class="blog-item">
+			<div class="blog-thumb">
+				<img src="{{b.thumbnail.url}}" alt="" class="img-fluid rounded">
+			</div>
+
+			<div class="blog-item-content">
+				<h3 class="mt-3 mb-3"><a href="{{ b.get_absolute_url }}">{{b.title}}</a></h3>
+
+				<div class="blog-item-meta mb-3">
+					<span class="text-black text-capitalize mr-3"><i class="ti-time mr-1"></i>{{b.pub_date}}</span>
+					<span class="text-muted text-capitalize mr-3"><i class="ti-pencil-alt mr-2"></i>{{b.category}}</span>
+				</div> 
+
+				
+				<p class="mb-4">{{b.head0}}</p>
+
+				<a href="{{ b.get_absolute_url }}" class="btn btn-small btn-main ">Learn More</a>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+
+</div>
+<!-- blog posts end  -->
+
+<!--search starts -->
+      
+<div class="col-lg-4">
+        <div class="sidebar-wrap pl-lg-4 mt-5 mt-lg-0">
+	<div class="sidebar-widget search  mb-3  ">
+		<h5>Search Here</h5>
+		<form action="{% url 'search' %}" class="search-form">
+			<input type="text " name ="q" class="form-control" placeholder="What are you looking for ?">
+			<i class="ti-search "></i>
+		</form>
+	</div>
+<!--search ends-->
+
+<!-- latest post codes -->
+
+
+	<div class="sidebar-widget latest-post mb-3">
+		<h5>Latest Posts</h5>
+		{% for post in most_recent %}
+        <div class="media py-3">
+            <a href="{{ post.get_absolute_url }}"><img class="mr-4" src="{{ post.thumbnail.url }}" alt="" style="max-width: 100px; max-height: 100px;"></a>
+            <div class="media-body">
+            	<span class="text-sm text-muted">{{ post.pub_date }}</span>
+                <h6 class="my-2"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h6>
+            </div>
+        </div>
+		{% endfor %}
+	</div>
+<!-- latest posts ends-->
+
+<!-- category tags starts -->
+
+	<div class="sidebar-widget category mb-3">
+		<h5 class="mb-4">Categories</h5>
+		{% for cat in category_count %}
+		<ul class="list-unstyled">
+		  <li class="align-items-center">
+		    <a href="{% url 'topic' name=cat.category__title %}">{{  cat.category__title }}</a>
+		    <span> ({{ cat.category_count }})</span>
+		  </li>
+		</ul>
+		{% endfor %}
+	</div>
+	<!-- category tags end -->
+
+
+
+
+	<div class="sidebar-widget mb-3">
+		<a href="#"><img src="{% static 'images/blog/adv.jpg' %}" alt="" class="img-fluid"></a>
+	</div>
+
+</div>
+      </div>
+    </div>
+
+    <div class="row mt-5 ">
+      <div class="col-lg-8">
+        <nav class="pagination py-2 d-inline-block">
+          <div class="nav-links">
+			{% if queryset.has_previous %}
+			<a class="page-numbers" href="?{{ page_request_var }}={{ queryset.previous_page_number }}"><i class="ti-angle-left"></i></a>
+            {% endif %}
+			<span aria-current="page" class="page-numbers current">{{ queryset.number }}</span>
+			{% if queryset.has_next %}
+            <a class="page-numbers" href="?{{ page_request_var }}={{ queryset.next_page_number }}"><i class="ti-angle-right"></i></a>
+			{% endif %}
+		  </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--slider ends -->
+<!-- footer Start -->
+{% block footer %}
+
+<!--Essential Scripts -->
+
+
+
+{% endblock %}
+{% endblock %}

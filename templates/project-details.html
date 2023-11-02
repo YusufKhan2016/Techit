@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% static "images" as baseUrl %}
+
+{% block title %}{{projectdetails.title}}{% endblock %}
+
+<!--header block -->
+{% block header %}
+
+<!-- Slider Start -->
+<style>
+	div.b {
+		word-wrap: break-word;
+	  }
+</style>
+<section class="section about">
+	<div class="b">
+		<div class="container">
+		{{projectdetails.desc|safe}}
+	</div>
+	</div>
+		
+
+</section>
+
+
+<!--slider ends -->
+
+<!-- footer Start -->
+
+{% block footer %}
+
+<!--Essential Scripts -->
+
+{% block Scripts %}
+
+
+{% endblock %}
+{% endblock %}
+{% endblock %}
