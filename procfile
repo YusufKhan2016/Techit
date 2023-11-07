@@ -1,1 +1,1 @@
-web: gunicorn Techitllc.wsgi --log-file -
+web: gunicorn Techit.wsgi --log-file -
