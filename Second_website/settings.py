@@ -1,4 +1,6 @@
 import os
+import django_heroku
+import dj_database_url
 
 from pathlib import Path
 
@@ -71,11 +73,11 @@ WSGI_APPLICATION = 'Second_website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'techit',
-        'USER':'root',
-        'PASSWORD':'',
-        'HOST':'localhost',
-        'PORT':'3306',
+        'NAME': 'dch4e3fjtb7cqj',
+        'USER':'jwzlwyfknqbxki',
+        'PASSWORD':'eff4948413d4221b8e69cada9497d1e82a276da9afcf9f29bf46473f626349f6',
+        'HOST':'ec2-18-205-44-21.compute-1.amazonaws.com',
+        'PORT':'5432',
     }
 }
 
@@ -115,11 +117,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static') 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'project_name/static')
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_URL = '/media/'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
@@ -137,4 +142,6 @@ CKEDITOR_CONFIGS = {
     },  
 }
 
+
+django_heroku.settings(locals())
 
