@@ -72,7 +72,7 @@ WSGI_APPLICATION = 'Second_website.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'dch4e3fjtb7cqj',
         'USER':'jwzlwyfknqbxki',
         'PASSWORD':'eff4948413d4221b8e69cada9497d1e82a276da9afcf9f29bf46473f626349f6',
