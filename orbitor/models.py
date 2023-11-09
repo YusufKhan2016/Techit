@@ -24,12 +24,11 @@ class services(models.Model):
     Desc= RichTextUploadingField(blank = True, null=True)
 
 class logoslider(models.Model):
+    name=models.CharField(max_length=50)
     img =models.ImageField(upload_to='pics')
-    height = models.IntegerField()
-    width = models.IntegerField()
 
-class award(models.Model):
-    img = models.ImageField(upload_to='pics')
+
+
 
 
 # team section 

@@ -26,10 +26,9 @@ def index(request):
 def about(request):    
     smp=socialmediaprofile.objects.all()
     imgslider = logoslider.objects.all()
-    dests = award.objects.all()
+
     group = team.objects.all()
     return render(request, 'about.html', {'imgslider':imgslider,
-                                          'dests':dests,
                                           'group':group,
                                           
                                           'smp':smp})

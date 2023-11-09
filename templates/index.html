@@ -27,51 +27,6 @@
 </section>
 
 
-<section class="section about">
-	<div class="container" id="blur">
-		<div class="row">
-			<div class="col-lg-4 col-md-6">
-				<div class="about-item mb-5 mb-lg-5">
-					<div class="icon">
-						<i class="ti-panel"></i>
-					</div>
-					<div class="content">
-						<h4 class="mt-3 mb-3">Analyse Your Expensees On Every Device</h4>
-						<p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
-						<a href="#"> Read More </a>
-					</div>
-				</div>
-			</div>
-			
-
-			<div class="col-lg-4 col-md-6">
-				<div class="about-item mb-5 mb-lg-5">
-					<div class="icon">
-						<i class="ti-panel"></i>
-					</div>
-					<div class="content">
-						<h4 class="mt-3 mb-3">Analyse Your Expensees On Every Device</h4>
-						<p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
-						<a href="#"> Read More </a>
-					</div>
-				</div>
-			</div>
-			
-			<div class="col-lg-4 col-md-6">
-				<div class="about-item">
-					<div class="icon">
-						<i class="ti-headphone-alt"></i>
-					</div>
-					<div class="content">
-						<h4 class="mt-3 mb-3">Creating a dedicated IT business growth</h4>
-						<p class="mb-4 ">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
-						<a href="#"> Read More </a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
 
 
 <section class="section about">
@@ -147,28 +102,32 @@
 
 
 <!--logo slider starts -->
-<section >
-	<div class="heading text-center mb-50">
-		<h1 class="container" >WHO HIRED US </h1>
-	</div>
-</section>
-<section class="section body">
-	<div class="slider">
-		<div class="slide-track">
-			{% for imgslider in imgslider %}
-		<div  class="slide">
-			<img src="{{imgslider.img.url}}" height="{{imgslider.height}}" width="{{imgslider.width}}" alt="" height="100px" width="200"/>
-		</div>	
-		{% endfor %}
-		{% for imgslider in imgslider %}
-		<div  class="slide">
-			<img src="{{imgslider.img.url}}" height="{{imgslider.height}}" width="{{imgslider.width}}" alt="" height="100px" width="200"/>
-		</div>	
-		{% endfor %}			
+<section class="section pricing">
+	<div class="container">
+		<div class="row ">
+			<div class="col-lg-6">
+				<div class="heading mb-50">
+				<h2 class="mb-4">Companies we worked with </h2>
+				<p>Dicta cupiditate, incidunt quia obcaecati itaque cumque, nostrum ipsum est voluptatibus, porro
+					provident a quam quibusdam. Ducimus possimus, nesciunt minima magni aspernatur.</p>
+			</div>
 		</div>
 	</div>
-	
+
+    <div class="row justify-content-center">
+		{% for imgslider in imgslider %}
+		<div class="col-lg-2 col-md-3 col-sm-4">
+		  <div class="award-img-block mb-4 mb-lg-0">
+			<div class="award-img">
+			  <img src="{{imgslider.img.url}}" alt="" class="img-fluid">
+			</div>
+		  </div>
+		</div>	
+		{% endfor %}		
+	  </div>
+  </div>
 </section>
+
 
 <!--logo slider ends -->
 <div class="container">
