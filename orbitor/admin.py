@@ -10,8 +10,11 @@ from .models import *
 class service(admin.ModelAdmin):
     list_display = ('name',)
 admin.site.register(services,service)
-admin.site.register(logoslider)
-admin.site.register(award)
+
+class logo(admin.ModelAdmin):
+    list_display=('name',)
+admin.site.register(logoslider,logo)
+
 
 
 # team section
