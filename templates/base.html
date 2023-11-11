@@ -22,7 +22,7 @@
     integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
   <!-- Favicon -->
-  <link rel="icon" href="{{icons.title_icon.url}}" type="image/x-icon">
+  <link rel="icon" href="{{logos.title_logo.url}}" type="image/x-icon">
   <!-- bootstrap.min css -->
   <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
   <!-- Icon Font Css -->
@@ -68,7 +68,7 @@
 <nav class="navbar navbar-expand-lg fixed-top bg-gray" id="navbar">
 		<div class="container">
 		  <a class="navbar-brand" href="{% url 'index' %}">
-			<img src="{% static 'images/icon.png' %}" alt="">
+			<img src="{{logos.logo.url}}" alt="">
 		  </a>
 
 		  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">

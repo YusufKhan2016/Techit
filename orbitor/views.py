@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from django.core.mail import send_mail
 
-logos=icon.objects.first()
+logos=lg.objects.first()
 
 def get_category_count():
     queryset = blog.objects\

@@ -7,7 +7,7 @@ from .models import *
 
 # Register your models here.
 
-admin.site.register(icon)
+admin.site.register(lg)
 class service(admin.ModelAdmin):
     list_display = ('name',)
 admin.site.register(services,service)
