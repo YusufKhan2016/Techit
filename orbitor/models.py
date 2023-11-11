@@ -4,9 +4,13 @@ from django.urls import reverse
 from django.core.validators import URLValidator
 
 # Create your models here.
-class lg(models.Model):
-    title_logo=models.ImageField(upload_to='pics/icon')
-    logo = models.ImageField(upload_to='pics/icon')
+# class lg(models.Model):
+#     title_logo=models.ImageField(upload_to='pics/icon')
+#     logo = models.ImageField(upload_to='pics/icon')
+
+class logo(models.Model):
+    title_logo =models.ImageField(upload_to='pics/icons')
+    logo =models.ImageField(upload_to='pics/icons')
 
 class pricing_category(models.Model):
     plan=models.CharField(max_length=70,blank=False,null=False)
