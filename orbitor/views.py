@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from django.core.mail import send_mail
 
+logos=icon.objects.first()
 
 def get_category_count():
     queryset = blog.objects\
@@ -17,10 +18,12 @@ def get_category_count():
 
 # Create your views here.
 def index(request):
+    
     faqs=faq.objects.all()
     imgslider = logoslider.objects.all()
     return render(request, 'index.html', {'imgslider':imgslider,
                                           'faqs':faqs,
+                                          'logos':logos,
                                           } )
 
 def about(request):    
@@ -30,7 +33,7 @@ def about(request):
     group = team.objects.all()
     return render(request, 'about.html', {'imgslider':imgslider,
                                           'group':group,
-                                          
+                                          'logos':logos,
                                           'smp':smp})
 
 #blog section starts
@@ -54,6 +57,7 @@ def blogsidebar(request):
                                                 'page_request_var':page_request_var,
                                                 'most_recent':most_recent,
                                                 'category_count':category_count,
+                                                'logos':logos,
                                                 })
 
 def blogsingle(request, id):
@@ -63,6 +67,7 @@ def blogsingle(request, id):
     last = blog.objects.last()    
     return render(request, 'blog-single.html',{'post':post,'first':first,
                                                'last':last,
+                                               'logos':logos,
                                                })
 
 #blog section ends 
@@ -71,16 +76,19 @@ def projectdetails(request, id):
         
     projectdetails=get_object_or_404(projectdetail, pk=id)
     return render (request, 'project-details.html',{'projectdetails':projectdetails,
+                                                    'logos':logos,
                                                     })
 
 def project(request):
     projectdetails = projectdetail.objects.all()
     return render(request, 'project.html', {'projectdetails':projectdetails,
+                                            'logos':logos,
                                             })
 
 def service(request):
     desc=services.objects.all()
     return render(request, 'service.html', {'desc':desc,
+                                            'logos':logos,
                                             })
 
 
@@ -89,7 +97,7 @@ def servicedetails(request,id):
 
     context={
         'servedetail':servedetail,
-        'icons':icons
+        'logos':logos,
     }
     return render(request,'service-details.html',context)
 
@@ -121,6 +129,7 @@ def contact(request):
     return render(request, 'contact.html',{'location':location,
                                            'categorys':categorys,
                                            'pricing':pricing,
+                                           'logos':logos,
                                            })
 
 
@@ -143,6 +152,7 @@ def getTopic(request, name):
                                             'page_request_var':page_request_var,
                                             'most_recent':most_recent,
                                             'category_count':category_count,
+                                            'logos':logos,
                                             })
 
 def search(request):
@@ -158,7 +168,8 @@ def search(request):
 
         context={
             'queryset':queryset,
-            'most_recent':most_recent,            
+            'most_recent':most_recent,   
+            'logos':logos,         
         }
     return render( request, 'search_results.html', context)
 
@@ -169,7 +180,8 @@ def terms_condition(request):
     protocol=condition.objects.first()
 
     context={
-            'protocol':protocol
+            'protocol':protocol,
+            'logos':logos,
 
     }
     return render(request,'terms-condition.html',context)
@@ -179,6 +191,7 @@ def privacy_policy(request):
     description= policy.objects.first()
     context={
         'description':description,
+        'logos':logos,
     }
     return render(request,'privacy-policy.html',context)
 
