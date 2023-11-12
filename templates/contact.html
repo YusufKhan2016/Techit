@@ -32,7 +32,7 @@
       <!-- Column for Contact Form -->
       <div class="col-lg-6">
         <div class="contact-form-wrap">
-          <form method="post" action="contact.html">
+          <form method="post" action="{% url 'contact' %}">
             {% csrf_token %}
             <!-- form message -->
             <div class="row">

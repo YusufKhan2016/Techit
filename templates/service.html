@@ -2,23 +2,93 @@
 {% load static %}
 {% static "images" as baseUrl %}
 
-{% block title %}Tech IT - Experience the Magic {% endblock %}
+{% block title %}Services{% endblock %}
 
 <!--header block -->
 {% block header %}
 
-<!--slider starts -->
-<section class="section about">
-    
-    <div class="container">
-        <h1 class="row justify-content-center align-items-center">{{servedetail.name}}</h1>
-    <section class="section about">
-        {{ servedetail.Desc|safe }}
-    </section>
-</div>
+<!-- Slider Start -->
+
+<section class="section service-2 ">
+
+	<div class="container-fluid">
+        <hr class="mx-auto mb-5 w-25">
+        <div class="row mb-5">
+			{% for desc in desc %}
+
+            <div class="col-12 col-sm-6 col-md-3 m-auto" >
+                <!-- card starts here -->
+                <div class="card shadow" style="margin-bottom: 40px;">
+					<a href="{% url 'service-details' id=desc.id %}">
+                    <img src="{{desc.img.url}}" alt="" class="card-img-top" >
+                    <div class="card-body">
+                        <h3 class="text-center">{{desc.name}}</h3>
+                        <hr class="mx-auto w-75">
+                        {{ desc.Desc|truncatechars:200|safe }}
+                    </div>
+				</a>
+                </div>
+                <!-- card ends here -->
+            </div>
+            <!-- col ends here -->
+            {% endfor %}
+        </div>
+    </div>
+
+
 </section>
 
-<section class="box">
+<section class="section case-study box">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-8">
+				<div class="case-study-content text-center mb-5">
+					<h2 class="mb-4">How we work</h2>
+					<p>There are many variations of lorem passages of Lorem Ipsum available, but the majority have suffered. All the Lorem Ipsum generators.</p>
+				</div>
+			</div>
+		</div>
+		<div class="timeline">
+			<div class="contin left-contin">
+				<img src="{% static 'images/round-wht_1.png' %}" alt="" >
+				<div class="text-box">
+					<h2>Competitor Research</h2>
+						<p>Nihil fugit officia esse vero, animi tenetur ullam, dolor aperiam minus aliquid enim laudantium fuga! Commodi voluptas, deleniti distinctio quam totam vitae.</p>
+					<span class="left-contin-arrow" ></span>
+				</div>
+				
+			</div>
+			<div class="contin right-contin">
+				<img src="{% static 'images/round-wht_1.png' %}" alt="" >
+				<div class="text-box">
+					<h2>Making Functional Strategy</h2>
+						<p>Nihil fugit officia esse vero, animi tenetur ullam, dolor aperiam minus aliquid enim laudantium fuga! Commodi voluptas, deleniti distinctio quam totam vitae.</p>
+					<span class="right-contin-arrow"></span>
+				</div>
+			</div><div class="contin left-contin">
+				<img src="{% static 'images/round-wht_1.png' %}" alt="" >
+				<div class="text-box">
+					<h2>Project Outline</h2>
+						<p>Nihil fugit officia esse vero, animi tenetur ullam, dolor aperiam minus aliquid enim laudantium fuga! Commodi voluptas, deleniti distinctio quam totam vitae.</p>
+					<span class="left-contin-arrow" ></span>
+				</div>
+			</div><div class="contin right-contin">
+				<img src="{% static 'images/round-wht_1.png' %}" alt="" >
+				<div class="text-box">
+					<h2>Final Delivery</h2>
+						<p>There are many variations of lorem passages of Lorem Ipsum available, but the majority have suffered. All the Lorem Ipsum generators.</p>
+					<span class="right-contin-arrow"></span>
+				</div>
+			</div>
+		</div>
+
+
+		
+	</div>
+</section>
+
+
+<section class="cta-2 box">
 	<div class="container">
 		<div class="cta-block py-5">
 			<div class="row align-items-center ">
@@ -34,10 +104,9 @@
 	</div>
 </section>
 
+<!--logo slider ends -->
 
 
-
-<!--slider ends -->
 <!-- footer Start -->
 {% block footer %}
 
@@ -48,5 +117,3 @@
 {% endblock %}
 {% endblock %}
 {% endblock %}
-
-
