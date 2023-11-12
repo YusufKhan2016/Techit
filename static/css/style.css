@@ -80,7 +80,7 @@ input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, inp
 }
 .form-control:focus {
   box-shadow: none;
-  border: 1px solid #FF715B;
+  border: 1px solid #c4a5a5;
 }
 
 .py-7 {
