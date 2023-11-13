@@ -9,7 +9,7 @@
 
 <!-- Slider Start -->
 
-<section class="section pricing">
+<section class="section pricing ">
 	<div class="container">
 		<div class="row ">
 			<div class="col-lg-6">
@@ -20,7 +20,7 @@
 		</div>
 	</div>
 
-	<div class="container-fluid">
+
         <hr class="col-12 col-sm-6 col-md-3">
         <div class="row mb-5">
 			{% for desc in desc %}
@@ -33,7 +33,7 @@
                     <div class="card-body">
                         <h3 class="text-center">{{desc.name}}</h3>
                         <hr class="mx-auto w-75">
-                        {{ desc.Desc|truncatechars:200|safe }}
+                        {{ desc.Desc|truncatechars:80|safe }}
                     </div>
 				</a>
                 </div>
@@ -42,7 +42,6 @@
             <!-- col ends here -->
             {% endfor %}
         </div>
-    </div>
 
 
 </section>
