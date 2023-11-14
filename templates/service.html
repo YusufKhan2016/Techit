@@ -21,27 +21,32 @@
 	</div>
 
 
-        <hr class="col-12 col-sm-6 col-md-3">
-        <div class="row mb-5">
-			{% for desc in desc %}
+        <!-- ... (existing code) ... -->
 
-            <div class="col-12 col-sm-6 col-md-3 m-auto" >
-                <!-- card starts here -->
-                <div class="card shadow" style="margin-bottom: 40px;">
-					<a href="{% url 'service-details' id=desc.id %}">
-                    <img src="{{desc.img.url}}" alt="" class="card-img-top" >
-                    <div class="card-body">
-                        <h3 class="text-center">{{desc.name}}</h3>
-                        <hr class="mx-auto w-75">
-                        {{ desc.Desc|truncatechars:80|safe }}
-                    </div>
-				</a>
-                </div>
-                <!-- card ends here -->
-            </div>
-            <!-- col ends here -->
-            {% endfor %}
-        </div>
+		<div class="row mb-5">
+			{% for desc in desc %}
+				<div class="col-12 col-sm-6 col-md-3 mb-4" style="margin-bottom: 40px; margin-right: 40px;margin-left:40px">
+					<div class="card">
+						<a href="{% url 'service-details' id=desc.id %}">
+							<img src="{{desc.img.url}}" alt="" class="card-img-top">
+							<div class="card-body">
+								<h3 class="text-center">{{desc.name}}</h3>
+								<hr class="mx-auto w-75">
+								{{ desc.Desc|truncatechars:80|safe }}
+							</div>
+						</a>
+					</div>
+				</div>
+			
+				{% if forloop.counter|divisibleby:3 %}
+					<div class="row mb-5"></div>
+				{% endif %}
+			{% endfor %}
+		</div>
+		
+
+<!-- ... (remaining code) ... -->
+
 
 
 </section>
