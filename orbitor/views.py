@@ -18,12 +18,13 @@ def get_category_count():
 
 # Create your views here.
 def index(request):
-    
+    desc=services.objects.all()
     faqs=faq.objects.all()
     imgslider = logoslider.objects.all()
     return render(request, 'index.html', {'imgslider':imgslider,
                                           'faqs':faqs,
                                           'logos':logos,
+                                          'desc':desc,
                                           } )
 
 def about(request):    
