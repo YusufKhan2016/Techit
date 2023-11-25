@@ -62,13 +62,16 @@ def blogsidebar(request):
                                                 })
 
 def blogsingle(request, id):
-
+    category_count = get_category_count()
+    most_recent = blog.objects.order_by('-pub_date')[:3]
     post = get_object_or_404(blog, pk=id )
     first = blog.objects.first()
     last = blog.objects.last()    
     return render(request, 'blog-single.html',{'post':post,'first':first,
                                                'last':last,
                                                'logos':logos,
+                                               'most_recent':most_recent,
+                                                'category_count':category_count,
                                                })
 
 #blog section ends 
