@@ -16,29 +16,37 @@
     <div class="row">
       <div class="col-lg-8">
         <div class="row">
-	{% for b in queryset %}
-	<div class="col-lg-12 col-md-12 mb-5">
-		<div class="blog-item">
-			<div class="blog-thumb">
-				<img src="{{b.thumbnail.url}}" alt="" class="img-fluid rounded">
+			{% for b in queryset %}
+			<div class="col-lg-12 col-md-12 mb-5 " >
+				<div class="blog-item d-flex">
+					<div class="blog-thumb mr-3">
+						<img src="{{ b.thumbnail.url }}" alt="" class="img-fluid rounded">
+					</div>
+			
+					<div class="blog-item-content" style="max-width: 60%;">
+						<h3 class="mt-3 mb-3"><a href="{{ b.get_absolute_url }}">{{ b.title }}</a></h3>
+			
+						<div class="blog-item-meta mb-3">
+							<span class="text-black text-capitalize mr-3"><i class="ti-time mr-1"></i>{{ b.pub_date }}</span>
+							<span class="text-muted text-capitalize mr-3"><i class="ti-pencil-alt mr-2"></i>{{ b.category }}</span>
+						</div>
+			
+						<div class="mb-4 ">
+							<style>
+								div.b {
+									word-wrap: break-word;
+								  }
+							</style>
+							<div class="b">
+							{{ b.head1 | truncatechars:80| safe }}
+							</div>
+						</div>
+			
+						<a href="{{ b.get_absolute_url }}" class="btn btn-small btn-main">Learn More</a>
+					</div>
+				</div>
 			</div>
-
-			<div class="blog-item-content">
-				<h3 class="mt-3 mb-3"><a href="{{ b.get_absolute_url }}">{{b.title}}</a></h3>
-
-				<div class="blog-item-meta mb-3">
-					<span class="text-black text-capitalize mr-3"><i class="ti-time mr-1"></i>{{b.pub_date}}</span>
-					<span class="text-muted text-capitalize mr-3"><i class="ti-pencil-alt mr-2"></i>{{b.category}}</span>
-				</div> 
-
-				
-				<p class="mb-4">{{b.head0}}</p>
-
-				<a href="{{ b.get_absolute_url }}" class="btn btn-small btn-main ">Learn More</a>
-			</div>
-		</div>
-	</div>
-	{% endfor %}
+		{% endfor %}
 </div>
 
 </div>

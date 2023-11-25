@@ -96,9 +96,8 @@ class contactform(models.Model):
         return self.email
     
 class blog(models.Model):
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=100)
     category = models.ForeignKey(category, on_delete=models.CASCADE)
-    head0 = models.CharField(max_length=107,default="")
     head1 = RichTextUploadingField(blank = False, null=False,max_length=1000000)
     pub_date = models.DateField()
     thumbnail = models.ImageField(upload_to='pics/blogs',default="")
