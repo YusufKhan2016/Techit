@@ -167,7 +167,7 @@ def search(request):
     if query:
         queryset=queryset.filter(
             Q(title__icontains=query)|
-            Q(head0__icontains=query)
+            Q(head1__icontains=query)
         ).distinct()
 
         context={
