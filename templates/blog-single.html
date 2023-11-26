@@ -39,6 +39,7 @@
 					<li class="list-inline-item"><a href="#" target="_blank"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
 				
 					<meta property="og:title" content="{{ post.title }}">
+					<meta property="og:description" content="{{ b.head1 | truncatechars:80| safe }}">
 					<meta property="og:image" content="{{ post.thumbnail.url }}">
 					<meta property="og:url" content="{{ request.build_absolute_uri }}">
 				
