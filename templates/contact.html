@@ -51,20 +51,6 @@
                         {% endfor %}
                     </select>
                 </div>
-
-                <div class="form-group">
-                  <select name="plan_category" class="form-control" id="exampleFormControlSelect1">
-                      <option value="" selected>Select plans  (Optional)</option>
-                          {% for p in pricing %}
-                          <option value="{{p.plan}}">{{p.plan}}</option>
-                          {% endfor %}
-                     
-                  </select>
-              </div>
-    
-                  <div class="form-group">
-                    <input name="subject" id="subject" type="text" class="form-control" placeholder="Your Subject">
-                  </div>
     
                   <div class="form-group">
                     <input name="name" id="name" type="text" class="form-control" placeholder="Your Name">

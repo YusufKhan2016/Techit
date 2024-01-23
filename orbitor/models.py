@@ -12,11 +12,6 @@ class logo(models.Model):
     title_logo =models.ImageField(upload_to='pics/icons')
     logo =models.ImageField(upload_to='pics/icons')
 
-class pricing_category(models.Model):
-    plan=models.CharField(max_length=70,blank=False,null=False)
-    def __str__(self):
-        return self.plan
-
 
     
 class category(models.Model):
@@ -87,8 +82,6 @@ class locationdetail(models.Model):
 
 class contactform(models.Model):
     help_category=models.CharField(max_length=200)
-    pcategory =models.CharField(max_length=100,blank=True,null=True)
-    subject = models.CharField(max_length=100)
     name=models.CharField(max_length=100)
     email = models.CharField(max_length=100)
     message = models.TextField(blank = True, null=True)

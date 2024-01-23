@@ -64,10 +64,6 @@ admin.site.register(blog, blogpost)
 
 
 
-class plan(admin.ModelAdmin):
-    list_display = ('plan',)
-admin.site.register(pricing_category)
-
 admin.site.register(policy)
 
 admin.site.register(condition)
