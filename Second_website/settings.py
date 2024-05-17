@@ -143,6 +143,26 @@ CKEDITOR_CONFIGS = {
     },  
 }
 
+# email configuration
+
+# EMAIL_BACKEND = 'anymail.backends.smtp.EmailBackend'
+
+# ANYMAIL = {
+#     'SMTP': {
+#         'HOST': os.environ.get('EMAIL_HOST'),  # Replace with retrieved value from environment variable
+#         'PORT': 465,  # Or your provider's port (usually 465 for SSL)
+#         'USER': os.environ.get('EMAIL_HOST_USER'),  # Retrieved from environment variable
+#         'PASSWORD': os.environ.get('EMAIL_HOST_PASSWORD'),  # Retrieved from environment variable
+#         'USE_TLS': True,  # Adjust if needed for your provider
+#     },
+# }
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'hasanrafsun123@gmail.com'
+EMAIL_HOST_PASSWORD = 'vqaxqlontijyqxun'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 django_heroku.settings(locals())
 
