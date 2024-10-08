@@ -107,6 +107,29 @@ def servicedetails(request,id):
     return render(request,'service-details.html',context)
 
 
+# def contact(request):
+#     if request.method == 'POST':
+#         contacts=contactform()
+#         categor = request.POST.get('category')
+#         name = request.POST.get('name')
+#         email = request.POST.get('email')
+#         message = request.POST.get('message')
+
+#         contacts.help_category = categor
+#         contacts.name = name
+#         contacts.email = email 
+#         contacts.message = message
+
+#         contacts.save()
+#         return redirect('/')
+    
+#     categorys=category.objects.all()      
+#     location=locationdetail.objects.all()          
+#     return render(request, 'contact.html',{'location':location,
+#                                            'categorys':categorys,
+#                                            'logos':logos,
+#                                            })
+
 
 def contact(request):
     if request.method == 'POST':
