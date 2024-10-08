@@ -124,7 +124,7 @@ def contact(request):
         message = request.POST['message']
         email = request.POST['email']
         name = request.POST['name']
-        full_message = f"Name: {name}\nEmail: {email}\n\nMessage: {message}"
+        full_message = f"Name: {name}\nEmail: {email}\nMessage: {message}"
         send_mail(
             'Contact Form' , #title
             full_message, #message
