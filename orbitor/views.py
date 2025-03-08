@@ -122,9 +122,10 @@ def contact(request):
         message = request.POST['message']
         email = request.POST['email']
         name = request.POST['name']
+        full_message = f"Name: {name}\nEmail: {email}\nMessage: {message}"
         send_mail(
             'Contact Form' , #title
-            message, #message
+            full_message, #message
             settings.EMAIL_HOST_USER, #sender if not 
             ['hasanrafsun5@gmail.com',],
             fail_silently=False)

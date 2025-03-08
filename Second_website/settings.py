@@ -4,14 +4,11 @@ import dj_database_url
 
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-uhwru#9z2%yh%os-9!h))v#qww)5rywh!4e%@&-fbrrqpo&tt+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -21,7 +18,6 @@ DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1','techitllc-9bc8d2adc30c.herokuapp.com','techitllc.com','www.techitllc.com']
 
 
-# Application definition
 
 INSTALLED_APPS = [
     'orbitor.apps.OrbitorConfig',
@@ -67,23 +63,19 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Second_website.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ddu7tv261abhv',
-        'USER':'uzxdfyjkxxvgex',
-        'PASSWORD':'9e4aa9c74b000baf3f7f48d37c148355257c8867853deb0c062e59351a5d8da1',
-        'HOST':'ec2-18-208-0-191.compute-1.amazonaws.com',
+        'NAME': 'd5681bgr75tqqk',
+        'USER':'u45h476d03jema',
+        'PASSWORD':'p085969ba2c34a2ec972b706fae01cb76d13594727bdd52ee11cb360eaf80ffea',
+        'HOST':'cb889jp6h2eccm.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com',
         'PORT':'5432',
     }
 }
 
 
-# Password validation
-# https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -101,8 +93,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/4.1/topics/i18n/
+
 
 LANGUAGE_CODE = 'en-us'
 
@@ -126,8 +117,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
+
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -143,19 +134,7 @@ CKEDITOR_CONFIGS = {
     },  
 }
 
-# email configuration
 
-# EMAIL_BACKEND = 'anymail.backends.smtp.EmailBackend'
-
-# ANYMAIL = {
-#     'SMTP': {
-#         'HOST': os.environ.get('EMAIL_HOST'),  # Replace with retrieved value from environment variable
-#         'PORT': 465,  # Or your provider's port (usually 465 for SSL)
-#         'USER': os.environ.get('EMAIL_HOST_USER'),  # Retrieved from environment variable
-#         'PASSWORD': os.environ.get('EMAIL_HOST_PASSWORD'),  # Retrieved from environment variable
-#         'USE_TLS': True,  # Adjust if needed for your provider
-#     },
-# }
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'hasanrafsun123@gmail.com'
