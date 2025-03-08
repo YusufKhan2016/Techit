@@ -14,7 +14,6 @@ urlpatterns =[
     path('contact',views.contact, name='contact'),
     path('topic/<name>', views.getTopic, name='topic'),
     path('search',views.search,name='search'),
-  
     path('terms-condition',views.terms_condition, name='terms-condition'),
     path('privacy-policy',views.privacy_policy, name='privacy-policy')
 

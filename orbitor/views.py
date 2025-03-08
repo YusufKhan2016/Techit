@@ -16,17 +16,16 @@ def get_category_count():
     return queryset
 
 
-
 # Create your views here.
 def index(request):
     desc=services.objects.all()
     faqs=faq.objects.all()
     imgslider = logoslider.objects.all()
     return render(request, 'index.html', {'imgslider':imgslider,
-                                          'faqs':faqs,
-                                          'logos':logos,
-                                          'desc':desc,
-                                          } )
+                                            'faqs':faqs,
+                                            'logos':logos,
+                                            'desc':desc,
+                                            } )
 
 def about(request):    
     smp=socialmediaprofile.objects.all()
@@ -34,9 +33,9 @@ def about(request):
 
     group = team.objects.all()
     return render(request, 'about.html', {'imgslider':imgslider,
-                                          'group':group,
-                                          'logos':logos,
-                                          'smp':smp})
+                                        'group':group,
+                                        'logos':logos,
+                                        'smp':smp})
 
 #blog section starts
 
@@ -69,11 +68,11 @@ def blogsingle(request, id):
     first = blog.objects.first()
     last = blog.objects.last()    
     return render(request, 'blog-single.html',{'post':post,'first':first,
-                                               'last':last,
-                                               'logos':logos,
-                                               'most_recent':most_recent,
+                                            'last':last,
+                                            'logos':logos,
+                                            'most_recent':most_recent,
                                                 'category_count':category_count,
-                                               })
+                                            })
 
 #blog section ends 
 
@@ -107,29 +106,6 @@ def servicedetails(request,id):
     return render(request,'service-details.html',context)
 
 
-# def contact(request):
-#     if request.method == 'POST':
-#         contacts=contactform()
-#         categor = request.POST.get('category')
-#         name = request.POST.get('name')
-#         email = request.POST.get('email')
-#         message = request.POST.get('message')
-
-#         contacts.help_category = categor
-#         contacts.name = name
-#         contacts.email = email 
-#         contacts.message = message
-
-#         contacts.save()
-#         return redirect('/')
-    
-#     categorys=category.objects.all()      
-#     location=locationdetail.objects.all()          
-#     return render(request, 'contact.html',{'location':location,
-#                                            'categorys':categorys,
-#                                            'logos':logos,
-#                                            })
-
 
 def contact(request):
     if request.method == 'POST':
@@ -138,7 +114,6 @@ def contact(request):
         email = request.POST.get('email')
         message = request.POST.get('message')
 
-   
         contacts.name = name
         contacts.email = email 
         contacts.message = message
@@ -153,6 +128,7 @@ def contact(request):
             settings.EMAIL_HOST_USER, #sender if not 
             ['hasanrafsun5@gmail.com',],
             fail_silently=False)
+        
         return redirect('/')
     
 

@@ -29,7 +29,7 @@ admin.site.register(socialmediaprofile,profile)
 
 class member(admin.ModelAdmin):
     list_display = ('name', 'rank')
-   
+
 
 admin.site.register(team, member)
 
